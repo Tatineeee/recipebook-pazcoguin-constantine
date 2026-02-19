@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import Recipe
 
 
@@ -8,8 +8,6 @@ def recipe_list(request):
 
 
 def recipe_detail(request, pk):
-    recipe = get_object_or_404(Recipe, pk=pk)
-    ctx = {
-        "recipe": recipe,
-    }
+    recipe = Recipe.objects.get(pk=pk)
+    ctx = {"recipe": recipe}
     return render(request, "recipes/recipe.html", ctx)
