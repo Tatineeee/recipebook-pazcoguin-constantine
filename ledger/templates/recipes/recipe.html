@@ -1,9 +1,17 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block page_title %}Recipe Detail{% endblock %} {% block content %}
 <h1>{{recipe.name}}</h1>
+<p>
+    <strong>Author:</strong>
+    {{recipe.author.name}}
+</p>
+<p>
+    <h4>Created on: {{recipe.created_on}}</h4>
+    <h4>Updated on: {{recipe.updated_on}}</h4>
+</p>
 <h2>Ingredients</h2>
 <ul>
     {% for item in recipe.ingredients.all %}
-    <li>{{ item.ingredient.name }}: {{ item.quantity }}</li>
+    <li>{{item.ingredient.name}}: {{item.quantity}}</li>
     {% endfor %}
 </ul>
 <p>

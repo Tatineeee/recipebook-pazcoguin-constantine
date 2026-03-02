@@ -1,5 +1,4 @@
-{% extends "base.html" %} {% block content %}
-<h1>Recipe List</h1>
+{% extends "base.html" %} {% block page_title %}Recipe List{% endblock %} {% block content %}
 <ul>
     {% for recipe in recipes %}
     <li>
