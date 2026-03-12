@@ -14,6 +14,14 @@
     <li>{{item.ingredient.name}}: {{item.quantity}}</li>
     {% endfor %}
 </ul>
+<h2>Images</h2>
+{% for img in recipe.images.all %}
+<img src="{{ img.image.url }}" alt="{{ img.description }}" width="500"/>
+<p>{{ img.description }}</p>
+{% endfor %}
+<p>
+    <a href="{% url 'recipe_add_image' recipe.pk %}">Upload Image</a>
+</p>
 <p>
     <a href="{% url 'recipe_list' %}">Back to Recipe List</a>
 </p>
