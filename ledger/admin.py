@@ -25,6 +25,6 @@ class RecipeAdmin(admin.ModelAdmin):
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 
-admin.site.register(Recipe)
 admin.site.register(Ingredient)
 admin.site.register(RecipeIngredient)
+admin.site.register(RecipeImage)

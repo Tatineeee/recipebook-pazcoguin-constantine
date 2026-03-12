@@ -31,7 +31,7 @@ class RecipeImageUploadView(LoginRequiredMixin, CreateView):
     template_name = "recipes/recipe_image_form.html"
 
     def form_valid(self, form):
-        form.instance.recipe = Recipe.objects.get(pk=self.kwargs["pk"])
+        form.instance.author = self.request.user.profile
         return super().form_valid(form)
 
     def get_success_url(self):
